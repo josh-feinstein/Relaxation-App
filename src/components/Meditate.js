@@ -11,7 +11,8 @@ class Meditate extends React.Component {
 
     this.state = {
       lengthOfBreath: 5,
-      numberOfBreaths: 3,
+      numberOfBreaths: 6,
+      breathIn: true,
       endMeditation: false,
     };
   }
@@ -22,12 +23,13 @@ class Meditate extends React.Component {
           this.setState({ lengthOfBreath: this.state.lengthOfBreath - 1 });
         } else {
           this.setState({ numberOfBreaths: this.state.numberOfBreaths - 1 });
+          this.setState({ breathIn: !this.state.breathIn })
           this.setState({ lengthOfBreath: 5 });
           if (this.state.numberOfBreaths < 1) {
             this.setState({ endMeditation: true });
           }
         }
-    }, 500);
+    }, 1000);
   }
 
   componentWillUnmount() {
@@ -41,11 +43,10 @@ class Meditate extends React.Component {
       return (
           <div className="App">
             <header className="App-header">
-              <p>Breath In/Out:</p>
-              <p>{this.state.lengthOfBreath}</p>
-              <p>Breaths Left</p>
-              <p>{this.state.numberOfBreaths}</p>
-              <Link to="/">Cancel Meditation</Link>
+              <h1>{(this.state.breathIn) ? 'Inhale' : 'Exhale'}</h1>
+              <h3>{this.state.lengthOfBreath} seconds...</h3>
+              <p>{this.state.numberOfBreaths} Breaths Left</p>
+              <Link className="link" to="/">Stop Meditating</Link>
             </header>
           </div>
       )

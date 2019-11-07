@@ -7,9 +7,9 @@ function Home() {
     <div className="App">
       <header className="App-header">
         <h1>It's Time to Relax</h1>
-        <Link to="/meditate">Meditate CLASS COMPONENT</Link>
-        <Link to="/meditate-hooks">Meditate REACT HOOKS</Link>
-        <Link to="/settings">Settings</Link>
+        <Link className="link" to="/meditate">Begin</Link>
+        <Link className="link" to="/instructions">Instructions</Link>
+        {/*<Link to="/settings">Settings</Link>}*/}
       </header>
     </div>
   );

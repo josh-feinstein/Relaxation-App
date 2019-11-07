@@ -6,8 +6,8 @@ function Complete() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Great Work</h1>
-        <Link to="/">Home</Link>
+        <h1>Great Work<br />{':)'}</h1>
+        <Link to="/">Back</Link>
       </header>
     </div>
   );
