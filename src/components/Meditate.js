@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import '../css/Meditate.css';
+import '../css/Home.css';
 
 
 class Meditate extends React.Component {
@@ -9,7 +9,7 @@ class Meditate extends React.Component {
 
     this.state = {
       lengthOfBreath: 5,
-      numberOfBreaths: 5,
+      numberOfBreaths: 3,
       endMeditation: false,
     };
   }
@@ -30,15 +30,17 @@ class Meditate extends React.Component {
 
   render() {
     if (this.state.endMeditation) {
-      return <Redirect to='/' />;
+      return <Redirect to='/complete' />;
     } else {
       return (
-          <div id="Meditate">
-            <p>Breath In/Out:</p>
-            <p>{this.state.lengthOfBreath}</p>
-            <p>Breaths Left</p>
-            <p>{this.state.numberOfBreaths}</p>
-            <Link to="/">Cancel Meditation</Link>
+          <div className="App">
+            <header className="App-header">
+              <p>Breath In/Out:</p>
+              <p>{this.state.lengthOfBreath}</p>
+              <p>Breaths Left</p>
+              <p>{this.state.numberOfBreaths}</p>
+              <Link to="/">Cancel Meditation</Link>
+            </header>
           </div>
       )
     }

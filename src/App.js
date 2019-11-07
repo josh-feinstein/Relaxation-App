@@ -4,9 +4,11 @@ import {
   Switch,
   Route
 } from "react-router-dom";
+import Complete from './components/Complete';
 import Home from './components/Home';
-import Settings from './components/Settings';
+import Instructions from './components/Instructions';
 import Meditate from './components/Meditate';
+import Settings from './components/Settings';
 import './css/Home.css';
 
 function App() {
@@ -14,6 +16,12 @@ function App() {
     <Router>
       <div>
         <Switch>
+        <Route path="/complete">
+          <Complete />
+        </Route>
+        <Route path="/instructions">
+          <Instructions />
+        </Route>
           <Route path="/meditate">
             <Meditate />
           </Route>
