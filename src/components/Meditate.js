@@ -7,6 +7,8 @@ class Meditate extends React.Component {
   constructor(props) {
     super(props);
 
+    this.interval = null;
+
     this.state = {
       lengthOfBreath: 5,
       numberOfBreaths: 3,
@@ -15,7 +17,7 @@ class Meditate extends React.Component {
   }
 
   componentDidMount() {
-      setInterval(() => {
+      this.interval = setInterval(() => {
         if (this.state.lengthOfBreath > 1) {
           this.setState({ lengthOfBreath: this.state.lengthOfBreath - 1 });
         } else {
@@ -25,7 +27,11 @@ class Meditate extends React.Component {
             this.setState({ endMeditation: true });
           }
         }
-    }, 1000);
+    }, 500);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {

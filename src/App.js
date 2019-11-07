@@ -8,6 +8,7 @@ import Complete from './components/Complete';
 import Home from './components/Home';
 import Instructions from './components/Instructions';
 import Meditate from './components/Meditate';
+import MeditateWithHooks from './components/MeditateWithHooks';
 import Settings from './components/Settings';
 import './css/Home.css';
 
@@ -16,14 +17,17 @@ function App() {
     <Router>
       <div>
         <Switch>
-        <Route path="/complete">
-          <Complete />
-        </Route>
-        <Route path="/instructions">
-          <Instructions />
-        </Route>
+          <Route path="/complete">
+            <Complete />
+          </Route>
+          <Route path="/instructions">
+            <Instructions />
+          </Route>
           <Route path="/meditate">
             <Meditate />
+          </Route>
+          <Route path="/meditate-hooks">
+            <MeditateWithHooks />
           </Route>
           <Route path="/settings">
             <Settings />
