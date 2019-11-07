@@ -1,17 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
-import './css/App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Home from './components/Home';
+import Settings from './components/Settings';
+import Meditate from './components/Meditate';
+import './css/Home.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Welcome to Relaxation App.
-        </p>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Switch>
+          <Route path="/meditate">
+            <Meditate />
+          </Route>
+          <Route path="/settings">
+            <Settings />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
