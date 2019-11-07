@@ -45,7 +45,7 @@ class Meditate extends React.Component {
             <header className="App-header">
               <h1>{(this.state.breathIn) ? 'Inhale' : 'Exhale'}</h1>
               <h3>{this.state.lengthOfBreath} seconds...</h3>
-              <p>{this.state.numberOfBreaths} Breaths Left</p>
+              <p>{this.state.numberOfBreaths} {(this.state.numberOfBreaths === 1) ? 'Last Breath' : 'Breaths Left' }</p>
               <Link className="link" to="/">Stop Meditating</Link>
             </header>
           </div>
